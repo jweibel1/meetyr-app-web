@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    <!-- maximum-scale=1 stops iPhone Safari zooming in on text fields (it does for text under 16px)
+         and staying zoomed; people can still pinch to zoom. viewport-fit=cover lets the app's safe-area
+         padding handle the notch and home bar when opened from the home screen. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <title>Meetyr</title>
+    <meta name="theme-color" content="#FCFCFE" />
+
+    <!-- Add to Home Screen (icons come from scripts/make-icons.swift). -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Meetyr" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
+    <style id="expo-reset">
+      /* These styles make the body full-height */
+      html,
+      body {
+        height: 100%;
+        /* The app's page color (colors.surfacePage), so nothing flashes white while it loads. */
+        background-color: #fcfcfe;
+        /* No pull-to-refresh or rubber-banding: swiping down on Discover's card brings back the previous one. */
+        overscroll-behavior: none;
+      }
+      /* These styles disable body scrolling if you are using <ScrollView> */
+      body {
+        overflow: hidden;
+      }
+      /* Meetyr's text fields show their own purple border when focused; the browser's outline would
+         sit inside it. */
+      input:focus,
+      textarea:focus {
+        outline: none;
+      }
+      /* These styles make the root element full-height */
+      #root {
+        display: flex;
+        height: 100%;
+        flex: 1;
+      }
+    </style>
+    <!-- Cloudflare Web Analytics for the web version only (the iPhone and Android apps never load this
+         page): counts visits and screens without cookies, same dashboard as meetyr.com. "spa" counts
+         each screen change in this single-page app. -->
+    <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "6abf681c02fc494186cce8af8a3314d2", "spa": true}'></script>
+  <link rel="icon" href="/favicon.ico"/><link rel="preload" href="/_expo/static/css/leaflet-df687fead8c4838a4e6b8bcb2f176a0e.css" as="style">
+<link rel="stylesheet" href="/_expo/static/css/leaflet-df687fead8c4838a4e6b8bcb2f176a0e.css"></head>
+
+  <body>
+    <noscript>
+      You need to enable JavaScript to run Meetyr.
+    </noscript>
+    <!-- The root element for your Expo app. -->
+    <div id="root"></div>
+  <script src="/_expo/static/js/web/index-9bd8815c773b6e9fb806a0806b0713d9.js" defer></script>
+</body>
+</html>
