@@ -16,11 +16,22 @@
       h1 { margin: 0 0 18px; font-size: 44px; font-weight: 800; letter-spacing: -1.5px; }
       p { margin: 0 0 10px; max-width: 22em; font-size: 18px; line-height: 1.5; }
       a { color: #FFFFFF; }
+      .open { display: inline-block; margin: 14px 0 6px; padding: 15px 30px; border-radius: 16px; background: #FFFFFF; color: #6D3BCD; font-weight: 800; text-decoration: none; }
     </style>
   </head>
   <body>
     <h1>meetyr</h1>
     <p>Meetyr's mobile site is closed while we get ready to launch.</p>
+    <!-- An invite's link (app.meetyr.com/invite/<code>), for someone who has the app: lib/invites.ts's code, 32 hex characters. -->
+    <p id="invite" hidden><a class="open" id="open" href="#">Open in Meetyr</a></p>
     <p>Questions: <a href="mailto:support@meetyr.com">support@meetyr.com</a></p>
+    <script>
+      (function () {
+        var m = location.pathname.match(/^\/invite\/([0-9a-f]{32})\/?$/i);
+        if (!m) return;
+        document.getElementById("open").href = "meetyr://invite/" + m[1].toLowerCase();
+        document.getElementById("invite").hidden = false;
+      })();
+    </script>
   </body>
 </html>
